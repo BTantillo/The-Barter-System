@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS barter_db;
+CREATE DATABASE barter_db;
+
+USE barter_db;
+
+CREATE TABLE users (
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  location VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE items_available (
+id INTEGER AUTO_INCREMENT PRIMARY KEY,
+item VARCHAR(30) NOT NULL,
+description TEXT
+);
