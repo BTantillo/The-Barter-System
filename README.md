@@ -4,7 +4,7 @@
 ## Description:
 Our group project is "The Barter System" where members will log-in and trade goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services. 
 
-Are you tired of the clutter in your closet or garage? Ready to trade your paintball gear for a sufboard? Do you want to trade housecleaning or babysitting for an oil change or yard maintenence? Whatever goods or services you need or can offer can now easily be found in your area! With The arter Sysyem, we are bringing back an old way of life, where money is not involved, but your needs are still fulfilled. BThis is a community where you can find things you need, or even things you don't! 
+Are you tired of the clutter in your closet or garage? Ready to trade your paintball gear for a sufboard? Do you want to trade housecleaning or babysitting for an oil change or yard maintenence? Whatever goods or services you need or can offer can now easily be found in your area! With The Barter System, we are bringing back an old way of life, where money is not involved, but your needs are still fulfilled. This is a community where you can find things you need, or even things you don't! 
 
 
 ## Project Requirements
