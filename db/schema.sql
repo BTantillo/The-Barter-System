@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS barter_db;
-CREATE DATABASE barter_db;
-
-USE barter_db;
-
 CREATE TABLE users (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
