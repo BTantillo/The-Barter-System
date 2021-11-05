@@ -1,7 +1,10 @@
 # The-Barter-System
 ## Project 2 Bootcamp: University of Oregon
 
-Our group project is a barter system where members will log-in and trade goods or services with their local community. Site will allow user to post items or services and perform searches for desire items or services.
+## Description:
+Our group project is "The Barter System" where members will log-in and trade goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services. 
+
+Are you tired of the clutter in your closet or garage? Ready to trade your paintball gear for a sufboard? Do you want to trade housecleaning or babysitting for an oil change or yard maintenence? Whatever goods or services you need or can offer can now easily be found in your area! With The arter Sysyem, we are bringing back an old way of life, where money is not involved, but your needs are still fulfilled. BThis is a community where you can find things you need, or even things you don't! 
 
 
 ## Project Requirements
