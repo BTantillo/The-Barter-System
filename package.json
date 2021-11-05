@@ -1,0 +1,28 @@
+{
+  "name": "The-Barter-System",
+  "version": "1.0.0",
+  "description": "## Description: Our group project is \"The Barter System\" where members will log-in and trade goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BTantillo/The-Barter-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BTantillo/The-Barter-System/issues"
+  },
+  "homepage": "https://github.com/BTantillo/The-Barter-System#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3-rc.0"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
