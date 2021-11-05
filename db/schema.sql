@@ -14,3 +14,11 @@ description TEXT,
 created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 CONSTRAINT barter_item UNIQUE (item_id)
 );
+
+CREATE TABLE items_wanted (
+wanted_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+items_wanted VARCHAR(30) NOT NULL,
+description TEXT,
+created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+CONSTRAINT barter_wanted UNIQUE (wanted_id)
+);
