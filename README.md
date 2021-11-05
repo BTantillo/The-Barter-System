@@ -1,5 +1,5 @@
 # The-Barter-System
-## Project 2 Bootcamp: University of Oregon
+## University of Oregon Bootcamp: Project 2
 
 ## Description:
 Our group project is "The Barter System" where members will log-in and trade goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services. 
@@ -26,7 +26,7 @@ Are you tired of the clutter in your closet or garage? Ready to trade your paint
 
 
 
-## Contributors to The Barter System Project:
+## Contributors to "The Barter System" Project:
 
 * [Ayla Duran](https://github.com/Ayla122)
 * [Ben Tantillo](https://github.com/BTantillo)
