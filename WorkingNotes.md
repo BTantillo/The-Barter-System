@@ -1,6 +1,6 @@
 11/ 09/21 - RA. Resolved the issue with the server not running.
 Modified the server.js file in the root folder. const db which connects to the connect.js file is not properly setup.
--disabled the middleware
+-Using 13.1.4 to setup the server with sequelize.
 
 - Will work on this now.
 
