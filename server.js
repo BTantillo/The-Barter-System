@@ -1,21 +1,22 @@
 const express = require("express");
-const db = require("./config/connection");
+//const db = require("./config/connection");
 
 // const apiRoutes = require('./routes/apiRoutes');
 
 //const sequelize = require("./config/connection");
 
-const PORT = process.env.PORT || 3006;
+const PORT = 3006 || process.env.PORT;
 const app = express();
 
 // Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+//app.use(express.urlencoded({ extended: false }));
+//app.use(express.json());
 // app.use('/api', apiRoutes);
 
+//Server test
 app.get("/", (req, res) => {
   res.json({
-    message: "Hello World",
+    message: "Bing Bong",
   });
 });
 
@@ -25,10 +26,10 @@ app.use((req, res) => {
 });
 
 // Start server after DB connection
-db.connect((err) => {
-  if (err) throw err;
-  console.log("Database is connected");
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
+// app.connect((err) => {
+//   if (err) throw err;
+//   console.log("Database is connected");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+// });
