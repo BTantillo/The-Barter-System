@@ -5,13 +5,16 @@ const router = require("express").Router();
 //TAKEN FROM comment-route.js
 //!Search for AAA and replace
 router.get("/", (req, res) => {
-  Comment.findAll()
-    .then((AAA) => res.json(AAA))
+  Comment.findAll({
+    attributes: ['']
+  })
+    .then(() => res.json(AAA))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
 });
+
 
 router.post("/", (req, res) => {
   AAA.create({
