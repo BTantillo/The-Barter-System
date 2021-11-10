@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="shortcut icon" type="image/x-icon" href="../styles/img/favicon.ico" />
   <title>swapsies</title>
 </head>
-<nav class="navbar navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
-    </a>
-  </div>
-</nav>
+
+<div class="shadow-sm p-30 mb-5 bg-body rounded">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/Users/aylarangel/Documents/GroupProject2/The-Barter-System/styles/img/logo.png" alt="logo"
+          height="50" class="d-inline-block align-text-top"
+          onclick="window.location.href='/Users/aylarangel/Documents/GroupProject2/The-Barter-System/Templates/start.html'">
+      </a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search Item" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</div>
+
 <body>
-<section class='wrapper'>
-  <section id='map-canvas' data-ng-init='initialize()'>
-    
-  </section>
-  <section class='sidebar'>
-    <img class='spinner' src='' ng-show='spinnerDisplay'/>
-    <h1>
-      <a class='logo' href='#'>Barter</a>
-    </h1>
-    <button ng-click='updateLocation()'>Search Nearby</button>
-    <button ng-click='postRedirect()'>Post an item</button>
-    <button ng-click='convRedirect()'>Dashboard</button>
-    <a href='#' ng-click='logout()'>
-      <button>Logout</button>
-    </a>
-    <h4>
-      Take a look in your area:
-      <input type='text' placeholder='Search posts!' autofocus='autofocus' ng-model='searchText'></input>
-    </h4>
-    <section class='postsContainer'>
-      <div class='searchPosts' ng-repeat='post in posts | filter:search | orderBy:"createdAt":true' ng-show='!post.completed'>
-        <section ng-click='' class='post'>
-          <img src=''/>
-          <div class='postText'>
-            <h2 id='itemName'><span class='underline'>Item Name</span>: {{post.itemName}}</h2>
-            <h2 id='description'><span class='underline'>Description</span>: {{post.description}}</h2>
-            <h2 id='condition'><span class='underline'>Condition</span>: {{post.condition}}</h2>
-            <h2 id='name'><span class='underline'>Contact</span>: {{post.name}}</h2>
-            <h2 id='date'><span class='underline'>Created</span>: {{post.createdAt | date:'MM/dd @ h:mma'}}</h2>
-          </div>
-        </section>
-      </div>
+  <section class='wrapper'>
+    <section id='map-canvas' data-ng-init='initialize()'>
     </section>
+    <section class='sidebar'>
+      <img class='spinner' src='' ng-show='spinnerDisplay' />
+      <h1>
+        <a class='logo' href='#'>Barter</a>
+      </h1>
+      <h4>
+        Take a look in your area:
+        <input type='text' placeholder='Search posts!' autofocus='autofocus' ng-model='searchText'></input>
+      </h4>
+      <section class='postsContainer'>
+        <div class='searchPosts' ng-repeat='post in posts | filter:search | orderBy:"createdAt":true'
+          ng-show='!post.completed'>
+          <section ng-click='' class='post'>
+            <img src='' />
+            <div class='postText'>
+              <h2 id='itemName'><span class='underline'>Item Name</span>: {{post.itemName}}</h2>
+              <h2 id='description'><span class='underline'>Description</span>: {{post.description}}</h2>
+              <h2 id='condition'><span class='underline'>Condition</span>: {{post.condition}}</h2>
+              <h2 id='name'><span class='underline'>Contact</span>: {{post.name}}</h2>
+              <h2 id='date'><span class='underline'>Created</span>: {{post.createdAt | date:'MM/dd @ h:mma'}}</h2>
+            </div>
+          </section>
+        </div>
+      </section>
+    </section>
+    <div ng-click='togglePostModal()' class='modalMask' ng-show='postModalShow'>
+      <div class='modal' ng-show='postModalShow'>
+        <form ng-submit='sendNewConversation(recipient)'>
+          <p><span class='underline'>To</span>: {{recipient.name}}</p>
+          <p><span class='underline'>Item Name</span>: {{recipient.itemName}}</p>
+          <p><span class='underline'>Message</span>:</p>
+          <input class='postMessage' type='text' ng-model='newConversation' placeholder='What did you want to say?'
+            ng-required='true'></input>
+          <button>Send Message</button>
+        </form>
+        <img class='cross' src='' ng-click='' />
+      </div>
+    </div>
   </section>
-  <div ng-click='togglePostModal()' class='modalMask' ng-show='postModalShow'></div>
-  <div class='modal' ng-show='postModalShow'>
-    <form ng-submit='sendNewConversation(recipient)'>
-      <p><span class='underline'>To</span>: {{recipient.name}}</p>
-      <p><span class='underline'>Item Name</span>: {{recipient.itemName}}</p>
-      <p><span class='underline'>Message</span>:</p>
-      <input class='postMessage' type='text' ng-model='newConversation' placeholder='What did you want to say?' ng-required='true'></input>
-      <button>Send Message</button>
-    </form>
-    <img class='cross' src='' ng-click=''/>
-  </div>
-</section>
-
- 
-  
-
 </body>
 </html>

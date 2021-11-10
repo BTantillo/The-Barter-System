@@ -1,15 +1,19 @@
-.wrapper {
+#startWrap {
     width: 1080px;
-    margin: 200px 50px 50px 300px;
+    margin: 200px
   }
-
+#mainWrap {
+    width: 1080px;
+    margin: 200px 50px 50px 30px;;  
+}
 #map-canvas {
   height: 625px;
   width: 50%;
   float: left;
-  border: 5px solid #000;
+  border: 5px solid teal;
+  border-radius: 15px;
   padding: 20px;
-  margin: 20px 10px 20px 0; 
+  margin: 20px 20px 20px 20px; 
   background-image: url("/Users/aylarangel/Documents/GroupProject2/The-Barter-System/styles/img/map-portland-oregon-urban-maps.jpeg");
 }
 #logo {
@@ -18,9 +22,10 @@
    margin: 20px 10px 20px 0; 
 }
 
-#login {
-   background-color: teal;
-   color:white;
+#start {
+   border:  1px solid lightgray;
+   border-right: 5px solid gray;
+   border-bottom:  5px solid gray;
    width: 250px;
    padding: 15px;
    margin: 20px 10px 20px 0; 
