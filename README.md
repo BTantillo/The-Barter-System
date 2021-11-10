@@ -24,6 +24,18 @@ Are you tired of the clutter in your closet or garage? Ready to trade your paint
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 * Finally, you must add your project to the portfolio that you created in Module 2.
 
+## Package Installations:
+* Npm install: npm i
+* Sequelize: npm i sequelize
+* Mysql2: npm install --save mysql2
+* Express: npm install express
+* Express-Handlebars: npm install express-handlebars
+* Express-Session: npm i express-session
+* jest: npm i jest
+* bcrypt: npm i bcrypt
+* connect-session-sequelize: npm i connect-session-sequelize
+* dotenv: npm i dotenv
+* handlebars: npm i handlebars
 
 
 ## Contributors to "The Barter System" Project:
