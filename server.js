@@ -4,7 +4,7 @@ const session = require("express-session");
 const exphbs = require("express-handlebars");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3006;
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: false })); //!14.5.7 snap changed to fals
 //express.static() method is a built-in Express.js middleware function that can take all of the contents of a folder and serve them as static assets
 app.use(express.static(path.join(__dirname, "public")));
 
-const routes = require("./controllers/");
+const routes = require("./api");
 
 // turn on routes
 app.use(routes); //Code snap  14.1 does not list
