@@ -20,8 +20,16 @@
   },
   "homepage": "https://github.com/BTantillo/The-Barter-System#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mysql2": "^2.3.3-rc.0"
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "express-sessions": "^1.0.6",
+    "helpers-utils": "^0.2.3",
+    "mysql2": "^2.3.3-rc.0",
+    "sequelize": "^6.9.0"
   },
   "devDependencies": {
     "jest": "^27.3.1"
