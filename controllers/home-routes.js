@@ -94,6 +94,15 @@ router.get("/post/:id", (req, res) => {
     });
 });
 
+router.get("/post", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("newpost");
+});
+
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
