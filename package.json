@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "node server.js",
     "seed": "node seeds/index.js"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BTantillo/The-Barter-System.git"
