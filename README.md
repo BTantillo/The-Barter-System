@@ -1,8 +1,4 @@
 # The-Barter-System ![GitHub license](https://img.shields.io/npm/l/express?style=for-the-badge)
-<<<<<<< HEAD
-=======
-
->>>>>>> 03cffde5b407619113762903e88fb0664e69ba34
 ## University of Oregon Bootcamp: Project 2
 
 ## Description:
