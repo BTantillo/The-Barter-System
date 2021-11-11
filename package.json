@@ -29,6 +29,7 @@
     "express-sessions": "^1.0.6",
     "handlebars": "^4.7.7",
     "helpers-utils": "^0.2.3",
+    "multer": "^1.4.3",
     "mysql2": "^2.3.3-rc.0",
     "sequelize": "^6.9.0"
   },
