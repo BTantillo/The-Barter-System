@@ -2,6 +2,42 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Comment, Vote } = require("../../models");
 const withAuth = require("../../utils/auth");
+const path = require("path");
+
+//Multer requirements //START
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, "../../public/assets/upload"));
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+//Multer Ends
+
+router.post("/stats", withAuth, upload.single("uploaded_file"),
+  function (req, res) {
+    Post.create({
+      title: req.body.title,
+      post_url: req.body.post_url,
+      file_name: req.file,
+      user_id: req.session.user_id,
+    })
+      .then((dbPostData) => res.json(dbPostData))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+
+    console.log(req.file, req.body);
+  }
+);
 
 // get all users
 router.get("/", (req, res) => {

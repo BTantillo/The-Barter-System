@@ -61,7 +61,9 @@ Post.init(
     post_url: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: { isURL: true },
+    },
+    file_name: {
+      type: DataTypes.STRING,
     },
     user_id: {
       type: DataTypes.INTEGER,
