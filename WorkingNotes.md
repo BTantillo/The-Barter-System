@@ -17,4 +17,4 @@ run the db
 
 # seed the db - on hold but will setup
 
-- node server.js
+- npm run seed
