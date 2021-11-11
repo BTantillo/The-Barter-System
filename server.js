@@ -44,23 +44,3 @@ app.use(routes); //Code snap  14.1 does not list
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
-<<<<<<< HEAD
-  
-  // Not Found response for unmatched routes
-  app.use((req, res) => {
-    res.status(404).end();
-  });
-  
-  // Start server after DB connection
-  db.connect(err => {
-    if (err) throw err;
-    console.log('Database is connected');
-    app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-    });
-
-    
-  });
-  
-=======
->>>>>>> 03cffde5b407619113762903e88fb0664e69ba34
