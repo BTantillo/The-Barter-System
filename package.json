@@ -6,7 +6,12 @@
   "scripts": {
     "test": "jest",
     "start": "node server.js",
+<<<<<<< HEAD
     "seed": "node seeds/index.js"  },
+=======
+    "seed": "node seeds/index.js"
+  },
+>>>>>>> develop
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BTantillo/The-Barter-System.git"

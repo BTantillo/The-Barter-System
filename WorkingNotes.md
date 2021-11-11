@@ -4,7 +4,7 @@ Modified the server.js file in the root folder. const db which connects to the c
 
 - Will work on this now.
 
-Run the server
+# Run the server
 
 - npm start
 
@@ -15,6 +15,6 @@ run the db
 - source db/db.sql
 - show databases;
 
-seed the db - on hold but will setup
+# seed the db - on hold but will setup
 
-- node db/index.js
+- node server.js
