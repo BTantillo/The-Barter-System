@@ -3,19 +3,23 @@
 
   <form class="new-post-form">
     <div>
-      <label for="post-title">Title</label>
+      <label for="post-title">Swap title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="post-description">Description</label>
-      <input type="description" id="post-description" name="post-description" />
-    </div>
-     <div>
-      <label for="post-url">Link</label>
+      <label for="post-url">Describe the swap you would like to do:</label>
       <input id="post-url" name="post-url" />
     </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+
+  {{!-- Imported form from newpost.handlebar to test --}}
+<form action="/api/posts" enctype="multipart/form-data" method="post">
+  <div class="form-group">
+    <input type="file" class="form-control-file" name="uploaded_file">
+    {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
+  </div>
+
+      <button type="submit" class="btn"> Swap it! </button>
+</form>
 </section>
 
 {{#if posts.length}}

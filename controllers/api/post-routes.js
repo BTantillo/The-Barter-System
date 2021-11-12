@@ -5,23 +5,53 @@ const withAuth = require("../../utils/auth");
 const multer  = require('multer');
 const path = require("path");
 
+//Multer setup STARTS
+const multer = require("multer");
+
+// Sets the storage constant to upload files into the upload folder.
+// Files are being stored through express not into the db.
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname,"../../public/assets/upload"));
+    cb(null, path.join(__dirname, "../../public/upload"));
   },
   filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    //file.original name retains the original file name
     cb(null, file.originalname);
   }
 });
 
-const upload = multer({ storage: storage })
+const upload = multer({ storage: storage });
+//Multer setup ENDS
 
-router.post('/stats', upload.single('uploaded_file'), function (req, res) {
-  // req.file is the name of your file in the form above, here 'uploaded_file'
-  // req.body will hold the text fields, if there were any 
-  console.log(req.file, req.body)
-});
+//!This route should be obsolete if the integration below works
+router.post(
+  "/stats",
+  withAuth,
+  upload.single("uploaded_file"),
+  function (req, res) {
+    console.log("original /stats route");
+    Post.create({
+      title: req.body.title,
+      post_url: req.body.post_url,
+      file_name: req.file,
+      user_id: req.session.user_id,
+    })
+      .then((dbPostData) => res.json(dbPostData))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+
+    console.log(
+      req.file,
+      req.body.title,
+      req.body.post_url,
+      req.session.user_id
+    );
+    console.log("#2", dbPostData);
+  }
+);
 
 // get all users
 router.get("/", (req, res) => {
@@ -108,11 +138,13 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", withAuth, (req, res) => {
+router.post("/", withAuth, upload.single("uploaded_file"), (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+  console.log("original Post route");
   Post.create({
     title: req.body.title,
     post_url: req.body.post_url,
+    file_name: req.file,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
@@ -120,6 +152,8 @@ router.post("/", withAuth, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+  console.log(req.file, req.body.title, req.body.post_url, req.session.user_id);
+  console.log("#2", dbPostData);
 });
 
 router.put("/upvote", withAuth, (req, res) => {
