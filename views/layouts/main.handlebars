@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Tech News</title>
+  <title>Swapsies</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -12,15 +12,19 @@
   <div class="wrapper">
     <header>
       <h1>
-        <a href="/">Just Tech News</a>
+        <a href="/">Swapsies! 
+        <br>
+        The Barter System
+        </a>
+        
       </h1>
        <nav>
         {{#if loggedIn}}
         <a href="/post">Create a post</a>
 
-        <button id="logout" class="btn-no-style">logout</button>
+        <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login">Login</a>
         {{/if}}
         </nav>
     </header>
@@ -28,7 +32,7 @@
       {{{ body }}}
     </main>
     <footer>
-      Thanks for visiting!
+      Please come back soon!
     </footer>
   </div>
   

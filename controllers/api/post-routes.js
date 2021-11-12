@@ -31,6 +31,7 @@ router.get("/", (req, res) => {
       "id",
       "post_url",
       "title",
+      "description",
       "created_at",
       [
         sequelize.literal(
@@ -42,7 +43,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "description", "comment_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -70,6 +71,7 @@ router.get("/:id", (req, res) => {
       "id",
       "post_url",
       "title",
+      "description",
       "created_at",
       [
         sequelize.literal(
@@ -81,7 +83,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "comment_text", "description", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
