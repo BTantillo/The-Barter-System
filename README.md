@@ -42,9 +42,9 @@ Are you tired of the clutter in your closet or garage? Ready to trade your paint
 
 ## Contributors to "The Barter System" Project:
  
-- [Ayla Duran](https://github.com/Ayla122)
-- [Ben Tantillo](https://github.com/BTantillo)
-- [Miranda Thompson](https://github.com/MirandaT77)
-- [Rafael Arroyo](https://github.com/DuckArroyo)
+- [Ayla Duran](https://github.com/Ayla122) [Email](mailto:ayladd122@gmail.com)
+- [Ben Tantillo](https://github.com/BTantillo) [Email](mailto:bentantillo@gmail.com)
+- [Miranda Thompson](https://github.com/MirandaT77) [Email](mailto:ranileah7@gmail.com)
+- [Rafael Arroyo](https://github.com/DuckArroyo) [Email](mailto:developerduckarroyo@gmail.com)
 
 For inquiries or concerns, please :mailbox: :love_letter: 
