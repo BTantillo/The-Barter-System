@@ -20,6 +20,22 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 //Multer Ends
+router.post("/newpost", upload.single("uploaded_file"),(req, res) =>{
+  console.log(req.file)
+  console.log(req.body)
+  Post.create({
+    title: req.body.title,
+    post_url: req.body.post_url,
+    file_name: req.file.destination,
+    user_id: req.session.user_id,
+  })
+  .then((dbPostData) => res.json(dbPostData))
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
+
 
 router.post("/stats", withAuth, upload.single("uploaded_file"),
   function (req, res) {
