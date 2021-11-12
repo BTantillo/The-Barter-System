@@ -1,11 +1,11 @@
-# The-Barter-System ![GitHub license](https://img.shields.io/npm/l/express?style=for-the-badge)
+# SWAPSIES: The-Barter-System ![GitHub license](https://img.shields.io/npm/l/express?style=for-the-badge)
 ## University of Oregon Bootcamp: Project 2
 
 ## Description:
 
-Our group project is "The Barter System" where members will log-in and trade goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services.
+Our group project is "The Barter System" where members will log-in and offer trades on goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services. 
 
-Are you tired of the clutter in your closet or garage? Ready to trade your paintball gear for a sufboard? Do you want to trade housecleaning or babysitting for an oil change or yard maintenence? Whatever goods or services you need or can offer can now easily be found in your area! With The Barter System, we are bringing back an old way of life, where money is not involved, but your needs are still fulfilled. This is a community where you can find things you need, or even things you don't!
+Are you tired of the clutter in your closet or garage? Ready to trade your paintball gear for a sufboard? Do you want to trade housecleaning or babysitting for an oil change or yard maintenence? Whatever goods or services you need or can offer can now easily be found in your area! With Swapsies, The Barter System, we are bringing back an old way of life, where money is not involved, but your needs are still fulfilled. This is a community where you can find things you need, or even things you don't!
 
 ## Project Requirements
 
@@ -26,6 +26,7 @@ Are you tired of the clutter in your closet or garage? Ready to trade your paint
 - Finally, you must add your project to the portfolio that you created in Module 2.
 
 ## Package Installations
+
 * Npm install: npm i
 * Sequelize: npm i sequelize
 * Mysql2: npm install --save mysql2
@@ -40,8 +41,10 @@ Are you tired of the clutter in your closet or garage? Ready to trade your paint
 * multer: npm i multer
 
 ## Contributors to "The Barter System" Project:
-
+ 
 - [Ayla Duran](https://github.com/Ayla122)
 - [Ben Tantillo](https://github.com/BTantillo)
 - [Miranda Thompson](https://github.com/MirandaT77)
 - [Rafael Arroyo](https://github.com/DuckArroyo)
+
+For inquiries or concerns, please :mailbox: :love_letter: 
