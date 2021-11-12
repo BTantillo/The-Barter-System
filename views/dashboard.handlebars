@@ -1,14 +1,18 @@
 <section>
   <h2>Create New Post</h2>
 
-  <form class="new-post-form">
+  <form class="new-post-form" action="/api/posts/newpost" method="post" enctype="multipart/form-data">
     <div>
-      <label for="post-title">Swap title</label>
-      <input type="text" id="post-title" name="post-title" />
+       <label for = "uploaded_file">Choose A File</label>
+    <input type="file" class="form-control-file" name="uploaded_file">
     </div>
     <div>
-      <label for="post-url">Describe the swap you would like to do:</label>
-      <input id="post-url" name="post-url" />
+      <label for="title">Title</label>
+      <input type="text" id="post-title" name="title" />
+    </div>
+    <div>
+      <label for="post_url">Link</label>
+      <input id="post-url" name="post_url" />
     </div>
 
   {{!-- Imported form from newpost.handlebar to test --}}
@@ -36,4 +40,4 @@
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script>
+{{!-- <script src="/javascript/add-post.js"></script> --}}
