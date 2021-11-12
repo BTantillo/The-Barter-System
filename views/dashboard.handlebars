@@ -1,27 +1,45 @@
 <section>
   <h2>Create New Post</h2>
 
+{{!!-- Note for Ben: "OPTION 1" &  "OPTION 2" also works if so you can choose the route you want to use. BUT we cannot use both.  --}}
+
+{{!-- OPTION 1 /api/posts/newpost --}}
   <form class="new-post-form" action="/api/posts/newpost" method="post" enctype="multipart/form-data">
     <div>
        <label for = "uploaded_file">Choose A File</label>
     <input type="file" class="form-control-file" name="uploaded_file">
     </div>
     <div>
-      <label for="title">Title</label>
+      <label for="title">Swap Title</label>
       <input type="text" id="post-title" name="title" />
     </div>
     <div>
-      <label for="post_url">Link</label>
+      <label for="post_url">Swap description</label>
       <input id="post-url" name="post_url" />
     </div>
 
-  {{!-- Imported form from newpost.handlebar to test --}}
+  {{!-- OPTION2 /api/posts --}}
 <form action="/api/posts" enctype="multipart/form-data" method="post">
   <div class="form-group">
     <input type="file" class="form-control-file" name="uploaded_file">
     {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
   </div>
-
+ <div>
+       <label for = "uploaded_file">Choose A File</label>
+    <input type="file" class="form-control-file" name="uploaded_file">
+    </div>
+    <div>
+      <label for="title">Swap Title</label>
+      <input type="text" id="post-title" name="title" />
+    </div>
+    <div>
+      <label for="post_url">Swap description</label>
+      <input id="post-url" name="post_url" />
+    </div>
+    
+    
+    
+    {{!-- BUTTON WORKS - DONT DELETE --}}
       <button type="submit" class="btn"> Swap it! </button>
 </form>
 </section>
