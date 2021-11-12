@@ -5,8 +5,6 @@ const withAuth = require("../../utils/auth");
 const multer  = require('multer');
 const path = require("path");
 
-//Multer setup STARTS
-const multer = require("multer");
 
 // Sets the storage constant to upload files into the upload folder.
 // Files are being stored through express not into the db.
