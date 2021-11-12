@@ -1,12 +1,12 @@
 {
-  "name": "The-Barter-System",
+  "name": "clear",
   "version": "1.0.0",
   "description": "## Description: Our group project is \"The Barter System\" where members will log-in and trade goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services.",
   "main": "server.js",
   "scripts": {
     "test": "jest",
     "start": "node server.js",
-    "seed": "node db/index.js"
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
