@@ -1,8 +1,15 @@
 * {
   box-sizing: border-box;
 }
+:root{
+  --teal:teal;
+  --lg:lightgrey;
+}
 
 body,
+
+
+
 html {
   height: 100%;
   padding: 0;
@@ -13,7 +20,7 @@ html {
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: var(--teal);
   font-weight: bold;
   transition: color 0.1s;
 }
@@ -94,22 +101,22 @@ main {
   padding: 2% 4%;
 }
 
-.btn-no-style {
-  background: none;
-  border: none;
-  padding: 0;
+.btn-style {
+  background: var(--teal);
+  border-radius: 5px;
+  padding: 5px;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: white;
   font-size: 100%;
   font-weight: bold;
   transition: color 0.1s;
   margin-left: 16px;
 }
 
-.btn-no-style:hover {
+.btn-style:hover {
   background: none;
-  color: #3486eb;
+  color: var(--teal);
 }
 
 .delete-post-btn {
