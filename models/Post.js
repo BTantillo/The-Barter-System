@@ -7,7 +7,7 @@ class Post extends Model {
     return models.Vote.create({
       user_id: body.user_id,
       post_id: body.post_id,
-    }).then(() => {
+    }).then((body) => {
       return Post.findOne({
         where: {
           id: body.post_id,
@@ -19,7 +19,7 @@ class Post extends Model {
           "created_at",
           [
             sequelize.literal(
-              "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post.id)"
+              "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
             ),
             "vote_count",
           ],
@@ -61,6 +61,7 @@ Post.init(
     post_url: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: { len: [5] },
     },
     file_name: {
       type: DataTypes.STRING,
