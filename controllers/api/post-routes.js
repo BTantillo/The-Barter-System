@@ -177,16 +177,17 @@ router.post("/", withAuth, upload.single("uploaded_file"), (req, res) => {
   Post.create({
     title: req.body.title,
     post_url: req.body.post_url,
-    file_name: req.file,
+    file_name: req.file.filename,
     user_id: req.session.user_id,
+    description: req.body.post_url
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbPostData) => res.redirect("/dashboard"))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
   console.log(req.file, req.body.title, req.body.post_url, req.session.user_id);
-  console.log("#2", dbPostData);
+  // console.log("#2", dbPostData);
 });
 
 router.put("/upvote", withAuth, (req, res) => {
