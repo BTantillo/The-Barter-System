@@ -3,9 +3,10 @@
 
 ## Description:
 
-Our group project is "The Barter System" where members will log-in and offer trades on goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services. 
+Our group project is Swapsies! And no, it's not what you may think.....
+Swapsies is a "Barter System" where members will log-in and offer trades on goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services. 
 
-Are you tired of the clutter in your closet or garage? Ready to trade your paintball gear for a sufboard? Do you want to trade housecleaning or babysitting for an oil change or yard maintenence? Whatever goods or services you need or can offer can now easily be found in your area! With Swapsies, The Barter System, we are bringing back an old way of life, where money is not involved, but your needs are still fulfilled. This is a community where you can find things you need, or even things you don't!
+Are you tired of the clutter in your closet or garage? Ready to trade your paintball gear for a surfboard? Do you want to trade housecleaning or babysitting for an oil change or yard maintenance? Whatever goods or services you need or can offer can now easily be found in your area! With Swapsies, The Barter System, we are bringing back an old way of life, where money is not involved, but your needs are still fulfilled. This is a community where you can find things you need, or even things you don't!
 
 ## Project Requirements
 
@@ -42,9 +43,9 @@ Are you tired of the clutter in your closet or garage? Ready to trade your paint
 
 ## Contributors to "The Barter System" Project:
  
-- [Ayla Duran](https://github.com/Ayla122)
-- [Ben Tantillo](https://github.com/BTantillo)
-- [Miranda Thompson](https://github.com/MirandaT77)
-- [Rafael Arroyo](https://github.com/DuckArroyo)
+- [Ayla Duran](https://github.com/Ayla122) :e-mail: [Email me](mailto:ayladd122@gmail.com)
+- [Ben Tantillo](https://github.com/BTantillo) :e-mail:[Email me](mailto:bentantillo@gmail.com)
+- [Miranda Thompson](https://github.com/MirandaT77) :e-mail:[Email me](mailto:ranileah7@gmail.com)
+- [Rafael Arroyo](https://github.com/DuckArroyo) :e-mail:[Email me](mailto:developerduckarroyo@gmail.com)
 
 For inquiries or concerns, please :mailbox: :love_letter: 

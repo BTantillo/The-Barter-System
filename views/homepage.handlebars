@@ -1,4 +1,7 @@
-<ol class="post-list">
+<section class="main-wrap"> 
+<section id='map-canvas' data-ng-init='initialize()'>
+  </section>
+
 
 <ol class="post-list">
   {{#each posts as |post|}}
@@ -7,16 +10,5 @@
   </li>
   {{/each}}
 </ol>
-<article class="post">
-  <div class="title">
-    <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-    <span>({{post.post_url}})</span>
-  </div>
-  <div class="meta">
-    {{post.vote_count}} point(s) by {{post.user.username}} on
-    {{post.created_at}}
-    |
-    <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-  </div>
-</article>
- </li>
+</section>
+<script src="/public/services/map.js"></script>

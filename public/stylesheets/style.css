@@ -1,8 +1,71 @@
 * {
   box-sizing: border-box;
 }
+:root{
+  --teal:teal;
+  --lg:lightgrey;
+}
 
 body,
+
+
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: var(--teal);
+}
+
+.searchButton {
+
+  background: var(--teal);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+.wrap{
+  float: right;
+}
+.btn-style {
+  background: var(--teal);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color 0.1s;
+  margin-left: 16px;
+  margin-right: 50px;
+  float: left;
+}
 html {
   height: 100%;
   padding: 0;
@@ -13,10 +76,27 @@ html {
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: var(--teal);
   font-weight: bold;
   transition: color 0.1s;
 }
+#map-canvas {
+  height: 600px;
+  width: 50%;
+  float: left;
+  border: 5px solid #000;
+  padding: 20px;
+  margin: 20px 5px 20px 0;
+}
+.post-list {
+  width: 45%;
+  margin: 0;
+  padding: 20px 5px 20px 0;
+  float:right;
+  height: 600px;
+  overflow: scroll;
+}
+/* refresh ends*/
 
 a:hover {
   color: #3486eb;
@@ -37,10 +117,7 @@ button:hover {
   background-color: #3486eb;
 }
 
-.post-list {
-  margin: 0;
-  padding: 0;
-}
+
 
 textarea,
 input {
@@ -94,22 +171,11 @@ main {
   padding: 2% 4%;
 }
 
-.btn-no-style {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: #225ca3;
-  font-size: 100%;
-  font-weight: bold;
-  transition: color 0.1s;
-  margin-left: 16px;
-}
 
-.btn-no-style:hover {
+
+.btn-style:hover {
   background: none;
-  color: #3486eb;
+  color: var(--teal);
 }
 
 .delete-post-btn {

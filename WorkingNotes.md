@@ -16,13 +16,5 @@ run the db
 - show databases;
 
 # seed the db - on hold but will setup
+
 - npm run seed
-- node server.js
-
-11/11/21 - these notes are duplicated in doc.
-
-The create post button now routes to the dashboard.
-
-Completed some structuring steps for the upload through the different view files. The route is not identifying the file upload in the console log. Getting a 500 error code. Interal server error.
-
-The posts still go through the original Post route.
