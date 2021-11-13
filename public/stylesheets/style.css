@@ -10,6 +10,62 @@ body,
 
 
 
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: var(--teal);
+}
+
+.searchButton {
+
+  background: var(--teal);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+.wrap{
+  float: right;
+}
+.btn-style {
+  background: var(--teal);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color 0.1s;
+  margin-left: 16px;
+  margin-right: 50px;
+  float: left;
+}
 html {
   height: 100%;
   padding: 0;
@@ -24,6 +80,8 @@ a {
   font-weight: bold;
   transition: color 0.1s;
 }
+
+/* refresh ends*/
 
 a:hover {
   color: #3486eb;
@@ -101,18 +159,7 @@ main {
   padding: 2% 4%;
 }
 
-.btn-style {
-  background: var(--teal);
-  border-radius: 5px;
-  padding: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-  font-size: 100%;
-  font-weight: bold;
-  transition: color 0.1s;
-  margin-left: 16px;
-}
+
 
 .btn-style:hover {
   background: none;
