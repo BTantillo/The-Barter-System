@@ -80,7 +80,20 @@ a {
   font-weight: bold;
   transition: color 0.1s;
 }
-
+#map-canvas {
+  height: 600px;
+  width: 50%;
+  float: left;
+  border: 5px solid #000;
+  padding: 20px;
+  margin: 20px 5px 20px 0;
+}
+.post-list {
+  width: 40%;
+  margin: 0;
+  padding: 20px 5px 20px 0;
+  float:right;
+}
 /* refresh ends*/
 
 a:hover {
@@ -102,10 +115,7 @@ button:hover {
   background-color: #3486eb;
 }
 
-.post-list {
-  margin: 0;
-  padding: 0;
-}
+
 
 textarea,
 input {
