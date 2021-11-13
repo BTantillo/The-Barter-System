@@ -1,33 +1,31 @@
-<form class="login-form">
-    <div>
-        <label for="email-login">Email:</label>
-        <input type="text" id="email-login" />
-    </div>
-    <div>
-        <label for="password-login">Password:</label>
-        <input type="password" id="password-login" />
-    </div>
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
+<section>
+  <h2>Create New Post</h2>
 
-<form class="signup-form">
-  <div>
-    <label for="username-signup">Username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">Email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">Password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">Signup</button>
-  </div>
-</form>
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    <div>
+      <label for="post-url">Link</label>
+      <input id="post-url" name="post-url" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
 
-<script src="/javascript/login.js"></script>
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>

@@ -15,8 +15,15 @@
   {{!-- Imported form from newpost.handlebar to test --}}
 <form action="/api/posts" enctype="multipart/form-data" method="post">
   <div class="form-group">
+    <label for = "uploaded_file">Choose A File</label>
+  
     <input type="file" class="form-control-file" name="uploaded_file">
-    <input type="submit" value="Upload!" class="btn btn-default">
+    <label for='title'>Post Title</label>
+    <input type="text" class="form-control" name="title">
+     <label for="post_url">Post URL</label>
+    <input type="text" class="form-control" name="post_url">
+
+    <input type="submit" value="Get me the stats!" class="btn btn-default">
   </div>
 
       <button type="submit" class="btn"> Swap it! </button>
