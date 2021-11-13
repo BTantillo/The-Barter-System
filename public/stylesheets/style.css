@@ -89,10 +89,12 @@ a {
   margin: 20px 5px 20px 0;
 }
 .post-list {
-  width: 40%;
+  width: 45%;
   margin: 0;
   padding: 20px 5px 20px 0;
   float:right;
+  height: 600px;
+  overflow: scroll;
 }
 /* refresh ends*/
 
