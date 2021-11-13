@@ -18,3 +18,5 @@ run the db
 # seed the db - on hold but will setup
 
 - npm run seed
+
+11/12 636pm updates
