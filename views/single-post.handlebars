@@ -1,8 +1,15 @@
-{{!-- DELETE IF THE OTHER CODE WORDS --}}
-{{> post-info post }}
-{{!-- END DELETE --}}
+{{!-- This file does not use a partial --}}
+
+{{! Because the structure of the post itself displays more information, I am leaving the partial alone to be used on the homepage.handlebar and we will use this as the post page }}
+
+<article class="post">
+  <div class="title"><h1>{{post.title}}</h1></div>
+ <br>
+  <div class="comment">{{post.post_url}}</div>  
+</article>
 
 
+<img src="{{file_name}}">
 
 {{#if loggedIn}}
 <form class="comment-form">
