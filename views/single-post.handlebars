@@ -9,7 +9,7 @@
 </article>
 <article>
   <div class="meta">
-    {{post.vote_count}} {{format_plural "point" vote_count}} by {{post.user.username}} on
+    {{post.vote_count}} {{format_plural "like" vote_count}} by {{post.user.username}} on
     {{format_date post.created_at}}
     <a href="/post/{{post.id}}">{{format_plural "comment" post.comments.length}}</a>
   </div>

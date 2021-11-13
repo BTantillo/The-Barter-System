@@ -14,15 +14,14 @@ class Post extends Model {
         },
         attributes: [
           "id",
-          "post_url",
           "title",
           "created_at",
-          [
-            sequelize.literal(
-              "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
-            ),
-            "vote_count",
-          ],
+          // [
+          //   sequelize.literal(
+          //     "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
+          //   ),
+          //   "vote_count",
+          // ],
         ],
         include: [
           {
@@ -64,7 +63,7 @@ Post.init(
     },
     post_url: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: { len: [5] },
     },
     file_name: {
