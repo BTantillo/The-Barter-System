@@ -13,9 +13,10 @@
     {{format_date post.created_at}}
     <a href="/post/{{post.id}}">{{format_plural "comment" post.comments.length}}</a>
   </div>
+    <img  src="/upload/{{post.file_name}}">
+<p>description: {{post.description}}</p>
 </article>
 
-<img src="{{post.file_name}}">
 
 {{#if loggedIn}}
 <form class="comment-form">
@@ -23,15 +24,15 @@
     <textarea name="comment-body"></textarea>
   </div>
 
-<form action="/api/posts/stats/{{post.id}}" enctype="multipart/form-data" method="post">
+{{!-- <form action="/api/posts/stats/{{post.id}}" enctype="multipart/form-data" method="post"> --}}
   <div class="form-group">
-    <input type="file" class="form-control-file" name="uploaded_file">
-    <input type="submit" value="Upload" class="btn btn-default">            
+    {{!-- <input type="file" class="form-control-file" name="uploaded_file"> --}}
+    <input type="submit" value="add comment" class="btn btn-default">            
   </div>
-</form>
+{{!-- </form>
   <div>
     <button type="submit">Add Comment</button>
-  </div>
+  </div> --}}
 </form>
 {{/if}}
 

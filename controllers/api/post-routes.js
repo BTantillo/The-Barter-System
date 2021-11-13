@@ -2,7 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Comment, Vote } = require("../../models");
 const withAuth = require("../../utils/auth");
-const multer  = require('multer');
+const multer = require("multer");
 const path = require("path");
 
 //!Incoming comment, When you do your pull this file will be heavily edited.
@@ -10,7 +10,6 @@ const path = require("path");
 //!These routes including file upload work for me.
 
 //Multer setup STARTS
-const multer = require("multer");
 
 // Sets the storage constant to upload files into the upload folder.
 // Files are being stored through express not into the db.
@@ -22,31 +21,33 @@ const storage = multer.diskStorage({
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     //file.original name retains the original file name
     cb(null, file.originalname);
-  }
+  },
 });
 
 const upload = multer({ storage: storage });
 //Multer setup ENDS
 
 //Multer Ends
-router.post("/newpost", upload.single("uploaded_file"),(req, res) =>{
-  console.log(req.file)
-  console.log(req.body)
+router.post("/newpost", upload.single("uploaded_file"), (req, res) => {
+  console.log(req.file);
+  console.log(req.body);
   Post.create({
     title: req.body.title,
     post_url: req.body.post_url,
     file_name: req.file.destination,
     user_id: req.session.user_id,
   })
-  .then((dbPostData) => res.json(dbPostData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-})
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-
-router.post("/stats", withAuth, upload.single("uploaded_file"),
+router.post(
+  "/stats",
+  withAuth,
+  upload.single("uploaded_file"),
   function (req, res) {
     console.log("original /stats route");
     Post.create({
@@ -91,7 +92,14 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "description", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: [
+          "id",
+          "description",
+          "comment_text",
+          "post_id",
+          "user_id",
+          "created_at",
+        ],
         include: {
           model: User,
           attributes: ["username"],
@@ -131,7 +139,14 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "description", "post_id", "user_id", "created_at"],
+        attributes: [
+          "id",
+          "comment_text",
+          "description",
+          "post_id",
+          "user_id",
+          "created_at",
+        ],
         include: {
           model: User,
           attributes: ["username"],
@@ -162,16 +177,17 @@ router.post("/", withAuth, upload.single("uploaded_file"), (req, res) => {
   Post.create({
     title: req.body.title,
     post_url: req.body.post_url,
-    file_name: req.file,
+    file_name: req.file.filename,
     user_id: req.session.user_id,
+    description: req.body.post_url
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbPostData) => res.redirect("/dashboard"))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
   console.log(req.file, req.body.title, req.body.post_url, req.session.user_id);
-  console.log("#2", dbPostData);
+  // console.log("#2", dbPostData);
 });
 
 router.put("/upvote", withAuth, (req, res) => {
