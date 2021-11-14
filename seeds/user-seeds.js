@@ -52,6 +52,26 @@ const userdata = [
     email: "bsteen9@epa.gov",
     password: "password123",
   },
+  {
+    username: "mirandagirl",
+    email: "ranileah7@gmail.com",
+    password: "password123",
+  },
+  {
+    username: "ayladd122",
+    email: "ayladd122@gmail.com",
+    password: "password123",
+  },
+  {
+    username: "bentantillo",
+    email: "bentantillo@gmail.com",
+    password: "password123",
+  },
+  {
+    username: "rafael",
+    email: "deveeloperduckarroyo@gmail.com",
+    password: "password123",
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userdata, { individualHooks: true });

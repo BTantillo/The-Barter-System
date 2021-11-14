@@ -54,6 +54,8 @@ router.get("/post/:id", (req, res) => {
       "post_url",
       "title",
       "created_at",
+      "file_name",
+      "description",
       [
         sequelize.literal(
           "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
@@ -86,6 +88,7 @@ router.get("/post/:id", (req, res) => {
       const post = dbPostData.get({ plain: true });
 
       // pass data to template
+      console.log("Loggin POST", post);
       res.render("single-post", { post, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
@@ -95,7 +98,7 @@ router.get("/post/:id", (req, res) => {
 });
 
 router.get("/post", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.loggedIn != true) {
     res.redirect("/");
     return;
   }

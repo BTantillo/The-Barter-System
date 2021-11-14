@@ -1,10 +1,34 @@
-<form action="/api/posts/stats" enctype="multipart/form-data" method="post">
+{{!-- New post is an alternative to the dashboard but only contains new post information --}}
+<section>
+  <h2>Create New Post</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Swap title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    <div>
+      <label for="post-url">Describe the swap you would like to do:</label>
+      <input id="post-url" name="post-url" />
+    </div>
+
+  {{!-- Imported form from newpost.handlebar to test --}}
+<form action="/api/posts" enctype="multipart/form-data" method="post">
   <div class="form-group">
+    <label for = "uploaded_file">Choose A File</label>
+  
     <input type="file" class="form-control-file" name="uploaded_file">
+    <label for='title'>Post Title</label>
     <input type="text" class="form-control" name="title">
-     
+     <label for="post_url">Post URL</label>
     <input type="text" class="form-control" name="post_url">
 
     <input type="submit" value="Get me the stats!" class="btn btn-default">
   </div>
+
+      <button type="submit" class="btn"> Swap it! </button>
 </form>
+</section>
+
+<script src="/javascript/add-post.js"></script>
+
