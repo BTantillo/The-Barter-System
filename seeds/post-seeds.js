@@ -18,11 +18,11 @@ const postdata = [
   {
     title: 'FREE: Rollerblades',
     description: 'I have mens size 10.5 rollerblades for free. They are well used, but have plenty of life yet. Son outgrew them.',
-    post_url: 'https://europa.eu/parturient/montes/nascetur/ridiculus/mus/etiam/vel.aspx',
+    
     user_id: 1
   },
   {
-    title: 'Cooking lessongs offered',
+    title: 'Cooking lessons offered',
     description: 'Gourmet cook and chef ready to help you learn! I really need someone to change the oil in my car for trade. Thank you!',
     post_url: 'http://desdev.cn/enim/blandit/mi.jpg',
     file_name: "kitten1.jpeg",

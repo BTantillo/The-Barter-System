@@ -3,13 +3,20 @@
 {{! Because the structure of the post itself displays more information, I am leaving the partial alone to be used on the homepage.handlebar and we will use this as the post page }}
 
 <article class="post">
-  <div class="title">
-    <h1>{{post.title}}</h1>
+  <div class="title"><h1>{{post.title}}</h1></div>
+  <p>Description: {{post.description}}</p>
+ {{!-- <br>
+  <div class="comment">{{post.post_url}}</div>   --}}
+</article>
+<article>
+  <div class="meta">
+    {{post.vote_count}} {{format_plural "like" vote_count}} by {{post.user.username}} on
+    {{format_date post.created_at}}
+    <a href="/post/{{post.id}}">{{format_plural "comment" post.comments.length}}</a>
   </div>
+    <img style="width: 300px; height: auto;" src="/upload/{{post.file_name}}">
 
-  <div> 
-     <img style="width: 300px; height: auto;" src="/upload/{{post.file_name}}">
-  </div>
+</article>
 
   <div>
     <p>{{post.description}}</p>
@@ -26,7 +33,9 @@
 {{!-- <form action="/api/posts/stats/{{post.id}}" enctype="multipart/form-data" method="post"> --}}
   <div class="form-group">
     {{!-- <input type="file" class="form-control-file" name="uploaded_file"> --}}
-    <input type="submit" value="add comment" class="btn btn-default">            
+    <input type="submit" value="add comment" class="btn btn-default">  
+    <button type="button" class="upvote-btn">like</button>
+              
   </div>
 {{!-- </form>
   <div>
@@ -39,4 +48,5 @@
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>
 {{/if}}
