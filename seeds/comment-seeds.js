@@ -112,7 +112,7 @@ const commentdata = [
     post_id: 10
   },
   {
-    comment_text: 'I have a 4x4 quad, needsa some work though',
+    comment_text: 'I have a 4x4 quad, needs some work though',
     user_id: 3,
     post_id: 8
   },
