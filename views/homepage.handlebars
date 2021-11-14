@@ -1,0 +1,17 @@
+<section class="main-wrap"> 
+<section id='map-canvas' data-ng-init='initialize()'>
+  </section>
+
+
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>
+</section>
+<src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="/services/map.js"></script>
+
+
