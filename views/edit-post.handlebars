@@ -5,20 +5,21 @@
   </h2>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{format_url post.post_url}})</span>
+      <input name="post-title" type="text" value="{{post.title}}"/>
+      <input name="post-title" type="text" value="{{post.title}}"/>
+
     </div>
+
+    <div>  
+      <span>Original Post: ({{format_url post.post_url}})</span>
+    </div>
+
     <div>
       {{post.vote_count}} {{format_plural "like" post.vote_count}} by you on {{format_date post.created_at}}
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
-    {{!-- Imported form from newpost.handlebar to test --}}
-<form action="/api/posts" enctype="multipart/form-data" method="post">
-  <div class="form-group">
-    <input type="file" class="form-control-file" name="uploaded_file">
-    {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
-  </div>
+
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
@@ -36,7 +37,7 @@
 
 {{> comments post.comments}}
 
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
+<script src="../public/javascript/edit-post.js"></script>
+<script src="../public/javascript/delete-post.js"></script>
+<script src="../public/javascript/comment.js"></script>
+<script src="../public/javascript/upvote.js"></script>
