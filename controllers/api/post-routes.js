@@ -5,11 +5,6 @@ const withAuth = require("../../utils/auth");
 const multer  = require('multer');
 const path = require("path");
 
-//!Incoming comment, When you do your pull this file will be heavily edited.
-//!At some point the routes were duplicated. I removed the duplicates that did not integrate  withAuth
-//!These routes including file upload work for me.
-
-//Multer setup STARTS
 
 // Sets the storage constant to upload files into the upload folder.
 // Files are being stored through express not into the db.
@@ -27,48 +22,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 //Multer setup ENDS
 
-//Multer Ends
-router.post("/newpost", upload.single("uploaded_file"),(req, res) =>{
-  console.log(req.file)
-  console.log(req.body)
-  Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    file_name: req.file.destination,
-    user_id: req.session.user_id,
-  })
-  .then((dbPostData) => res.json(dbPostData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-})
-
-
-router.post("/stats", withAuth, upload.single("uploaded_file"),
-  function (req, res) {
-    console.log("original /stats route");
-    Post.create({
-      title: req.body.title,
-      post_url: req.body.post_url,
-      file_name: req.file,
-      user_id: req.session.user_id,
-    })
-      .then((dbPostData) => res.json(dbPostData))
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-
-    console.log(
-      req.file,
-      req.body.title,
-      req.body.post_url,
-      req.session.user_id
-    );
-    console.log("#2", dbPostData);
-  }
-);
 
 // get all users
 router.get("/", (req, res) => {
