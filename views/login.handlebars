@@ -1,35 +1,41 @@
-<h1>Login</h1>
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
-<h1>Sign Up</h1>
+<section class="main-wrap">
+  <section data-ng-init='initialize()'>
+    
+    <form class="login-form">
+      <div class="container">
+        <h1>Login</h1>
+        <div>
+          <label for="email-login">email:</label>
+          <input type="text" id="email-login" />
+        </div>
+        <div>
+          <label for="password-login">password:</label>
+          <input type="password" id="password-login" />
+        </div>
+        <div id="submit">
+          <button type="submit">login</button>
+        </div>
+      </div>
+    </form>
+  
+
 <form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">signup</button>
-  </div>
-</form>
-
-
-<script src="/javascript/login.js"></script>
+    <h1>Sign Up</h1>
+      <div>
+        <label for="username-signup">username:</label>
+        <input type="text" id="username-signup" />
+      </div>
+      <div>
+        <label for="email-signup">email:</label>
+        <input type="text" id="email-signup" />
+      </div>
+      <div>
+        <label for="password-signup">password:</label>
+        <input type="password" id="password-signup" />
+      </div>
+      <div>
+        <button type="submit">signup</button>
+      </div>
+    </form>
+</section>
+</section>
