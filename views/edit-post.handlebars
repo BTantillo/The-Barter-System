@@ -5,20 +5,36 @@
   </h2>
   <form class="edit-post-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{format_url post.post_url}})</span>
+
+{{!-- Add value to edit title and description --}}
+    <div>
+      <input name="post-title" type="text" value="{{post.title}}"/>
+      <span>({{post.title}})</span>
     </div>
+
+    <div>
+      <input name="post-description" type="text" value="{{post.description}}"/>
+      <span>({{post.description}})</span>
+    </div>
+
+
+{{!-- Should this stay? doesnt make sense in this page --}}
     <div>
       {{post.vote_count}} {{format_plural "like" post.vote_count}} by you on {{format_date post.created_at}}
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
-    {{!-- Imported form from newpost.handlebar to test --}}
+
+
+
+    {{!-- DELETE this is making the buttons malfuntion ===============--}}
 <form action="/api/posts" enctype="multipart/form-data" method="post">
   <div class="form-group">
     <input type="file" class="form-control-file" name="uploaded_file">
     {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
   </div>
+{{!-- End DELETE section --}}
+
     <button type="submit">Save post</button>
     <button type="button" class="delete-post-btn">Delete post</button>
   </form>
@@ -36,7 +52,9 @@
 
 {{> comments post.comments}}
 
-<script src="/javascript/edit-post.js"></script>
+{{!-- RELINK --}}
+<script src="../public/javascript/edit-post.js"></script>
+
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
