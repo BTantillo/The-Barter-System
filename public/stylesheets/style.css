@@ -124,12 +124,12 @@ header {
   width: 40%;
 }
 
-.signup-form {
+#signup-form {
   float: right;
   padding: 20px; 
 }
 
-.login-form {
+#login-form {
   float: left;
   margin-bottom: 300px;
 }
