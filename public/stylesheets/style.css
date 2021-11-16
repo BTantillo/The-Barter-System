@@ -142,6 +142,22 @@ header {
   margin: 20px 5px 20px 50px;
 }
 
+.back {
+  float:left;
+}
+
+.editPost {
+  height: 600px;
+  width: 85%;
+  margin: 20px 5px 20px 20px;
+  display: inline-block;
+}
+
+.comment-form {
+  width: 25%;
+  margin-top: 50px;
+}
+
 /* .createPost {
   border: solid 5px #000;
   width: 45%;

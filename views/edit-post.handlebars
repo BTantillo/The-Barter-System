@@ -1,39 +1,41 @@
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
+<div class="back">
+<a href="/dashboard"> &larr; Back to dashboard</a>
+</div>
+<section class="editPost">
+  <article>
+    <h1>Edit Post</h1>
+    <form class="edit-post-form">
+      <div>
+        <input name="post-title" type="text" value="{{post.title}}" />
+        <span>({{format_url post.post_url}})</span>
+      </div>
+      <div>
+        {{post.vote_count}} {{format_plural "like" post.vote_count}} by you on {{format_date post.created_at}}
+        |
+        <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      </div>
+      {{!-- Imported form from newpost.handlebar to test --}}
+      <form action="/api/posts" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+          <input type="file" class="form-control-file" name="uploaded_file">
+          {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
+        </div>
+        <button type="submit">Save post</button>
+        <button type="button" class="delete-post-btn">Delete post</button>
+      </form>
+  </article>
+
+ 
+  <form class="comment-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{format_url post.post_url}})</span>
+      <textarea name="comment-body"></textarea>
     </div>
+
     <div>
-      {{post.vote_count}} {{format_plural "like" post.vote_count}} by you on {{format_date post.created_at}}
-      |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <button type="submit">Add Comment</button>
     </div>
-    {{!-- Imported form from newpost.handlebar to test --}}
-<form action="/api/posts" enctype="multipart/form-data" method="post">
-  <div class="form-group">
-    <input type="file" class="form-control-file" name="uploaded_file">
-    {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
-  </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
   </form>
-</article>
-
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form>
-
+</section>
 {{> comments post.comments}}
 
 <script src="/javascript/edit-post.js"></script>
