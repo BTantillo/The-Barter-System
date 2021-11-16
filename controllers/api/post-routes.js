@@ -165,7 +165,18 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  console.log("id", req.params.id);
+  console.log("trying to delete post with id", req.params.id);
+  Vote.destroy({
+    where: {
+      post_id: req.params.id
+    }
+  }).then(() =>{
+  Comment.destroy({
+    where: {
+      post_id: req.params.id
+    }
+  }).then(() =>{
+
   Post.destroy({
     where: {
       id: req.params.id,
@@ -183,5 +194,7 @@ router.delete("/:id", withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+})
+})
 
 module.exports = router;
