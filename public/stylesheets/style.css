@@ -57,10 +57,10 @@ button {
 } */
 
 #map-canvas {
-  height: 600px;
-  width: 50%;
+  height: 500px;
+  width: 45%;
   float: left;
-  border: 10px solid #000;
+  border: 3px solid #000;
   border-radius: 5px;
   margin: 20px 5px 20px 20px;
   background-image: url('/stylesheets/images/HomeImg.jpg');
@@ -70,10 +70,10 @@ button {
 
 .post-list {
   width: 45%;
-  margin: 0;
-  padding: 30px 5px 20px 0;
+ margin: 20px 20px 5px 20px;
+  padding: 0;
   float:right;
-  height: 600px;
+  height: 500px;
   overflow: scroll;
 }
 
@@ -100,11 +100,15 @@ header {
   padding: 0 1%;
 }
 
-form {
+.form {
   border: 5px solid #000;
   margin: 20px;
   padding: 15px;
   width: 45%;
+  height: 200px;
+}
+
+.form-group {
   height: 200px;
 }
 

@@ -1,38 +1,40 @@
 <section class="main-wrap">
   <section data-ng-init='initialize()'>
+    <div class="form">
+      <form class="login-form">
+        <div class="container">
+          <h1>Login</h1>
+          <div>
+            <label for="email-login">email:</label>
+            <input type="text" id="email-login" />
+          </div>
+          <div>
+            <label for="password-login">password:</label>
+            <input type="password" id="password-login" />
+          </div>
+          <div id="submit">
+            <button type="submit">login</button>
+          </div>
+        </div>
+      </form>
+    </div>
 
-    <form class="login-form">
-      <div class="container">
-        <h1>Login</h1>
+    <div class="form">
+      <form class="signup-form">
+        <h1>Sign Up</h1>
         <div>
-          <label for="email-login">email:</label>
-          <input type="text" id="email-login" />
+          <label for="email-signup">email:</label>
+          <input type="text" id="email-signup" />
         </div>
         <div>
-          <label for="password-login">password:</label>
-          <input type="password" id="password-login" />
+          <label for="password-signup">password:</label>
+          <input type="password" id="password-signup" />
         </div>
-        <div id="submit">
-          <button type="submit">login</button>
+        <div class="submit">
+          <button type="submit">sign up</button>
         </div>
-      </div>
-    </form>
-
-
-    <form class="signup-form">
-      <h1>Sign Up</h1>
-      <div>
-        <label for="email-signup">email:</label>
-        <input type="text" id="email-signup" />
-      </div>
-      <div>
-        <label for="password-signup">password:</label>
-        <input type="password" id="password-signup" />
-      </div>
-      <div class="submit">
-        <button type="submit">sign up</button>
-      </div>
-    </form>
+      </form>
+    </div>
   </section>
 </section>
 
