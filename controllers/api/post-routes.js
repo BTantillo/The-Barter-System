@@ -2,7 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Comment, Vote } = require("../../models");
 const withAuth = require("../../utils/auth");
-const multer = require("multer");
+const multer  = require('multer');
 const path = require("path");
 
 
@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     //file.original name retains the original file name
     cb(null, file.originalname);
-  },
+  }
 });
 
 const upload = multer({ storage: storage });
@@ -43,14 +43,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: [
-          "id",
-          "description",
-          "comment_text",
-          "post_id",
-          "user_id",
-          "created_at",
-        ],
+        attributes: ["id", "description", "comment_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -90,14 +83,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: [
-          "id",
-          "comment_text",
-          "description",
-          "post_id",
-          "user_id",
-          "created_at",
-        ],
+        attributes: ["id", "comment_text", "description", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
