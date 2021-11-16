@@ -77,6 +77,7 @@ button {
   overflow: scroll;
 }
 
+
 h3 {
   color: var(--teal);
   text-align: center;
@@ -134,13 +135,20 @@ header {
   margin-bottom: 300px;
 }
 
-.newPost {
+.newPost{
+  height: 500px;
+  width: 45%;
   float: left;
+  margin: 20px 5px 20px 50px;
 }
 
-.yourPost {
-  float: right;
-}
+/* .createPost {
+  border: solid 5px #000;
+  width: 45%;
+  height: 500px;
+  float: left;
+} */
+
 
 
 /* refresh ends*/
