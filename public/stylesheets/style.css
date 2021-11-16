@@ -1,4 +1,3 @@
-
 :root{
   --teal:teal;
   --lg:lightgrey;
@@ -16,14 +15,6 @@ h1{
   flex-direction: column;
 }
 
-/* body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-} */
-
-/* .wrap{
-  float: right;
-} */
 .btn-style {
   background: var(--teal);
   border-radius: 5px;
@@ -64,6 +55,7 @@ button {
   font-weight: bold;
   transition: color 0.1s;
 } */
+
 #map-canvas {
   height: 600px;
   width: 50%;
@@ -84,12 +76,6 @@ button {
   height: 600px;
   overflow: scroll;
 }
-
-.btn-style {
-  color: black;
-}
-
-
 
 h3 {
   color: var(--teal);
@@ -117,24 +103,41 @@ header {
 form {
   border: 5px solid #000;
   margin: 20px;
-  padding: 5%;
-  width: 25%;
+  padding: 15px;
+  width: 45%;
+  height: 200px;
 }
 
-#submit {
+.submit {
   margin-top: 5px;
+  border-radius: 5px;
 }
 
-#container {
+.container {
   float:right;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
 }
 
-#signup-form {
+.signup-form {
+  float: right;
+  padding: 20px; 
+}
+
+.login-form {
+  float: left;
+  margin-bottom: 300px;
+}
+
+.newPost {
+  float: left;
+}
+
+.yourPost {
   float: right;
 }
+
 
 /* refresh ends*/
 

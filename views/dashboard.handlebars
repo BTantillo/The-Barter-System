@@ -1,7 +1,6 @@
 <section data-ng-init='initialize()'>
 
-<section>
-  <h2>Create New Post</h2>
+
 
 {{!!-- Note for Ben: "OPTION 1" &  "OPTION 2" also works if so you can choose the route you want to use. BUT we cannot use both.  --}}
 
@@ -21,7 +20,11 @@
     </div> --}}
 
   {{!-- OPTION2 /api/posts --}}
-<form action="/api/posts" enctype="multipart/form-data" method="post">
+  <div  class="post-list">
+  <section>
+    <form action="/api/posts" enctype="multipart/form-data" method="post">
+  <h2>Create New Post</h2>
+
   <div class="form-group">
     <input type="file" class="form-control-file" name="uploaded_file">
     {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
@@ -34,14 +37,16 @@
       <label for="post_url">Swap description</label>
       <input id="post-url" name="post_url" />
     </div>
-    
-    
-    
     {{!-- BUTTON WORKS - DONT DELETE --}}
-      <button type="submit" class="btn"> Swap it! </button>
+      <button type="submit" class="submit"> Swap it! </button>
 </form>
+</div>
+
 </section>
 
+
+
+<div class="yourPost">
 {{#if posts.length}}
 <section>
   <h2>Your Posts</h2>
@@ -56,4 +61,8 @@
 </section>
 {{/if}}
 </section>
+</div>
+
+
+
 {{!-- <script src="/javascript/add-post.js"></script> --}}
