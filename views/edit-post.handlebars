@@ -28,17 +28,43 @@
  
   <form class="comment-form">
     <div>
-      <textarea name="comment-body"></textarea>
+
+{{!-- Add value to edit title and description --}}
+    <div>
+      <input name="post-title" type="text" value="{{post.title}}"/>
+      <span>({{post.title}})</span>
     </div>
 
     <div>
+      <input name="post-description" type="text" value="{{post.description}}"/>
+      <span>({{post.description}})</span>
+    </div>
+
+
+{{!-- Should this stay? doesnt make sense in this page --}}
+    <div>
       <button type="submit">Add Comment</button>
     </div>
+
+
+
+    {{!-- DELETE this is making the buttons malfuntion ===============--}}
+<form action="/api/posts" enctype="multipart/form-data" method="post">
+  <div class="form-group">
+    <input type="file" class="form-control-file" name="uploaded_file">
+    {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
+  </div>
+{{!-- End DELETE section --}}
+
+    <button type="submit">Save post</button>
+    <button type="button" class="delete-post-btn">Delete post</button>
   </form>
 </section>
 {{> comments post.comments}}
 
+{{!-- RELINK --}}
 <script src="../public/javascript/edit-post.js"></script>
-<script src="../public/javascript/delete-post.js"></script>
-<script src="../public/javascript/comment.js"></script>
-<script src="../public/javascript/upvote.js"></script>
+
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>

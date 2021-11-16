@@ -6,7 +6,6 @@ const multer = require("multer");
 const path = require("path");
 const { VISITOR_KEYS } = require("@babel/types");
 
-
 // Sets the storage constant to upload files into the upload folder.
 // Files are being stored through express not into the db.
 const storage = multer.diskStorage({
@@ -22,7 +21,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 //Multer setup ENDS
-
 
 // get all users
 router.get("/", (req, res) => {
@@ -128,10 +126,10 @@ router.post("/", withAuth, upload.single("uploaded_file"), (req, res) => {
   console.log("original Post route");
   Post.create({
     title: req.body.title,
-    post_url: req.body.post_url,
+    //post_url: req.body.post_url,
     file_name: req.file.filename,
     user_id: req.session.user_id,
-    description: req.body.post_url
+    description: req.body.description,
   })
     .then((dbPostData) => res.redirect("/dashboard"))
     .catch((err) => {
