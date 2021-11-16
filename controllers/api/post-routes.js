@@ -2,8 +2,9 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Comment, Vote } = require("../../models");
 const withAuth = require("../../utils/auth");
-const multer = require("multer");
+const multer  = require('multer');
 const path = require("path");
+const { VISITOR_KEYS } = require("@babel/types");
 
 
 // Sets the storage constant to upload files into the upload folder.
@@ -16,7 +17,7 @@ const storage = multer.diskStorage({
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
     //file.original name retains the original file name
     cb(null, file.originalname);
-  },
+  }
 });
 
 const upload = multer({ storage: storage });
@@ -43,14 +44,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: [
-          "id",
-          "description",
-          "comment_text",
-          "post_id",
-          "user_id",
-          "created_at",
-        ],
+        attributes: ["id", "description", "comment_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -90,14 +84,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: [
-          "id",
-          "comment_text",
-          "description",
-          "post_id",
-          "user_id",
-          "created_at",
-        ],
+        attributes: ["id", "comment_text", "description", "post_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -179,7 +166,18 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  console.log("id", req.params.id);
+  console.log("trying to delete post with id", req.params.id);
+  Vote.destroy({
+    where: {
+      post_id: req.params.id
+    }
+  }).then(() =>{
+  Comment.destroy({
+    where: {
+      post_id: req.params.id
+    }
+  }).then(() =>{
+
   Post.destroy({
     where: {
       id: req.params.id,
@@ -197,5 +195,6 @@ router.delete("/:id", withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
+})
+})
 module.exports = router;

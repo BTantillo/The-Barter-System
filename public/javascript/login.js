@@ -1,3 +1,5 @@
+console.log("Loading login.js file ")
+
 async function signupFormHandler(event) {
   event.preventDefault();
 
