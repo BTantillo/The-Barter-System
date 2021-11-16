@@ -3,7 +3,7 @@ async function logout() {
     method: "post",
     headers: { "Content-Type": "application/json" },
   });
-
+  console.log("Logut REsponse is ", response); 
   if (response.ok) {
     document.location.replace("/");
   } else {
@@ -11,4 +11,4 @@ async function logout() {
   }
 }
 
-document.querySelector("#logout").addEventListener("click", logout);
+document.querySelector("#btnLogout").addEventListener("click", logout);
