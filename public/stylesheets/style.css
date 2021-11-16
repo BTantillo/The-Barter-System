@@ -27,7 +27,7 @@ h1{
 .btn-style {
   background: var(--teal);
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   text-decoration: none;
   color: white;
@@ -84,6 +84,12 @@ button {
   height: 600px;
   overflow: scroll;
 }
+
+.btn-style {
+  color: black;
+}
+
+
 
 h3 {
   color: var(--teal);

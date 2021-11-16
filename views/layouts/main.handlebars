@@ -24,16 +24,17 @@
       <nav>
 
         <a href="/dashboard">
-          <button id="nav-btn" class="btn-style">dashboard</button>
+          <button id="btnDashbaord" class="btn-style">dashboard</button>
         </a>
 
         <a href="/login">
-          <button id="nav-btn" class="btn-style">login</button>
+          <button id="btnLogin" class="btn-style">login</button>
         </a>
-
-        <a href="/dashboard">
-          <button id="nav-btn" class="btn-style">logout</button>
+        {{#if loggedIn}}
+        <a href="/logout">
+          <button id="btnLogout" class="btn-style">logout</button>
         </a>
+        {{/if}}
 
 
         {{!-- <div class="wrap">
@@ -56,19 +57,19 @@
 
 
     </main>
-    </body>
-    <footer>
+</body>
+<footer>
 
 
 
 
-      <h3> COME BACK SOON!</h3>
-    </footer>
-  </div>
+  <h3> COME BACK SOON!</h3>
+</footer>
+</div>
 
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 
 
 </html>
