@@ -142,9 +142,12 @@ router.put("/upvote", withAuth, (req, res) => {
 });
 
 router.put("/:id", withAuth, (req, res) => {
+  console.log("HERE I AM !!!!!!!!!!!!!")
   Post.update(
     {
       title: req.body.title,
+      post_url: req.body.description,
+      description: req.body.description
     },
     {
       where: {
