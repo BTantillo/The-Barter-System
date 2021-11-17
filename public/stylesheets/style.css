@@ -6,6 +6,10 @@
 h1{
   color: var(--teal);
 }
+h2 {
+  color: var(--teal);
+  margin-left: 100px;
+}
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -39,6 +43,7 @@ button {
   font-size: 100%;
   font-weight: bold;
   float: left;
+  border-radius: 5px;
 }
 
 img {
@@ -155,7 +160,7 @@ header {
 }
 
 .comment-form {
-  margin: 70px 0px 5px 0px;
+  margin: 100px 0px 5px 100px;
   width: 45%;
 }
 
@@ -196,18 +201,22 @@ header {
   margin: 20px;
 }
 
-.edit-btns {
+.edit-post-form {
+  margin-left: 100px;
+}
+
+#edit-btns {
   margin-top: 10px;
 }
-
-#editSave {
-  margin-right: 10px;
-  border-radius: 5px;
+#edit-com {
+  margin: 100px 0 50px 100px;
 }
 
-#editDel {
-  border-radius: 5px;
+#edit-post-box {
+  height: 150px;
+  width: 250px;
 }
+
 
 /* .createPost {
   border: solid 5px #000;

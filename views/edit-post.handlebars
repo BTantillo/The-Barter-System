@@ -1,51 +1,51 @@
-<div class="back">
+<article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
-</div>
+  <h2>
+    Edit Post
+  </h2>
+  <form action="#" class="edit-post-form">
+    <div id="edit-post-box">
+      <input name="post-title" type="text" value="{{post.title}}" />
+      <textarea name="post-description" value="{{post.description}}" ></textarea>
+      <span>({{format_url post.post_url}})</span>
+    </div>
+    <div>
+      {{post.vote_count}} {{format_plural "like" post.vote_count}} by you on {{format_date post.created_at}}
+      |
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+    {{!-- Imported form from newpost.handlebar to test --}}
+    {{!-- <form action="/api/posts" enctype="multipart/form-data" method="post"> --}}
 
-<section class="newPost">
-  <article>
-    <form>
-      <div class="edit-post-form">
-        <h1>Edit Post</h1>
-        <div>
-          <input name="post-title" type="text" value="{{post.title}}" />
-          <span>({{format_url post.post_url}})</span>
-        </div>
-        <div>
-          {{post.vote_count}} {{format_plural "like" post.vote_count}} by you on {{format_date post.created_at}}
-          |
-          <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
-        </div>
-        {{!-- Imported form from newpost.handlebar to test --}}
-        <form action="/api/posts" enctype="multipart/form-data" method="post">
-          <div class="form-group">
-            <input type="file" class="form-control-file" name="uploaded_file">
-            {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
-          </div>
-
-          <div class="edit-btns">
-
-            <button type="submit" id="editSave">Save</button>
-            <button type="button" class="delete-post-btn" id="editDel">Delete</button>
-          </div>
-      </div>
-    </form>
-  </article>
-
+    {{!-- <div class="form-group">
+        <input type="file" class="form-control-file" name="uploaded_file"> --}}
+      {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
+    <div id="edit-btns">
+    <button type="submit">Save post</button>
+    <button type="button" class="delete-post-btn">Delete post</button> </div>
+  </form>
+</article>
 
 <form class="comment-form">
-  <textarea name="comment-body"></textarea>
-  <button type="submit" class="btn-style">Add Comment</button>
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Add Comment</button>
+  </div>
 </form>
-</section>
-<section class="post-list" id="newCom">
 
+<div id="edit-com">
 {{> comments post.comments}}
-</section>
+</div>
 
 
 
-<script src="/javascript/edit-post.js"></script>
+{{!-- RELINK --}}
+<script src="../public/javascript/edit-post.js"></script>
+
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
+
