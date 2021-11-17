@@ -34,6 +34,19 @@ h2 {
   float: left;
 }
 
+#add-com {
+  background: var(--teal);
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 100%;
+  font-weight: bold;
+  float: left;
+  border-radius: 5px;
+  transition: color 0.1s;
+}
+
 button {
   background: var(--teal);
   padding: 5px;
@@ -49,6 +62,10 @@ button {
 img {
   margin-top: 20px;
   margin-bottom: 20px; 
+}
+
+#single-post-img {
+  margin-left: 15px;
 }
 
 /* html {
@@ -85,6 +102,13 @@ img {
   float:right;
   height: 500px;
   overflow: scroll;
+}
+
+#post-list {
+  margin-top: 55px;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 300px;
 }
 
 #newCom {
@@ -160,8 +184,11 @@ header {
 }
 
 .comment-form {
-  margin: 100px 0px 5px 100px;
+  margin: 100px 0px 5px 15px;
   width: 45%;
+}
+#comment-form {
+  margin-left: 100px;
 }
 
 .upvote-btn {
@@ -193,8 +220,15 @@ header {
   margin-right: 50px;
   float: left;
 }
+ .post {
+   margin-left: 20px;
+ }
 
-.curPo {
+ .meta {
+  margin-left: 20px;
+ }
+
+ .curPo {
   float: left;
   height: 500px;
   width: 45%;
