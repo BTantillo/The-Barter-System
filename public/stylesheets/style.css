@@ -82,6 +82,10 @@ img {
   overflow: scroll;
 }
 
+#newCom {
+  width:300px;
+}
+
 h3 {
   color: var(--teal);
   text-align: center;
