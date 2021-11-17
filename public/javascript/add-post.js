@@ -1,15 +1,16 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
-  const description = document.querySelector('input[name="post-description"]').value;
-  const post_url = document.querySelector('input[name="post-url"]').value;
-
+  const title = document.querySelector('input[name="title"]').value;
+  const post_url = document.querySelector('input[name="post_url"]').value;
+  if (post_url.length < 5) {
+    alert("The post must be more than 5 characters");
+    return;
+  }
   const response = await fetch(`/api/posts`, {
     method: "POST",
     body: JSON.stringify({
       title,
-      description,
       post_url,
     }),
     headers: {
