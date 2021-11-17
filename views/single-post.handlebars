@@ -1,7 +1,7 @@
 {{!-- This file does not use a partial --}}
 
 {{! Because the structure of the post itself displays more information, I am leaving the partial alone to be used on the homepage.handlebar and we will use this as the post page }}
-
+<section class="newPost">
 <article class="post">
   <div class="title"><h1>{{post.title}}</h1></div>
   <p>Description: {{post.description}}</p>
@@ -14,13 +14,12 @@
     {{format_date post.created_at}}
     <a href="/post/{{post.id}}">{{format_plural "comment" post.comments.length}}</a>
   </div>
-    <img style="width: 300px; height: auto;" src="/upload/{{post.file_name}}">
+   
 
 </article>
-
-
 {{#if loggedIn}}
-<form class="comment-form">
+
+<form>
   <div>
     <textarea name="comment-body"></textarea>
   </div>
@@ -28,15 +27,19 @@
 {{!-- <form action="/api/posts/stats/{{post.id}}" enctype="multipart/form-data" method="post"> --}}
   <div class="form-group">
     {{!-- <input type="file" class="form-control-file" name="uploaded_file"> --}}
-    <input type="submit" value="add comment" class="btn btn-default">  
+    <input type="submit" value="add comment" class="btn btn-default" id="com-btn">  
     <button type="button" class="upvote-btn">like</button>
               
   </div>
-{{!-- </form>
-  <div>
-    <button type="submit">Add Comment</button>
-  </div> --}}
+
+
+</section>
+<section class="comment-form">
+
+
 </form>
+ <img style="width: 300px; height: auto;" src="/upload/{{post.file_name}}">
+
 {{/if}}
 
 {{> comments post.comments}}
@@ -45,3 +48,4 @@
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
 {{/if}}
+</section>
