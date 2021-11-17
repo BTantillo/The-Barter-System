@@ -1,4 +1,4 @@
-<section>
+<section id="newPost">
   <h2>Create New Post</h2>
 
   {{!-- OPTION2 /api/posts --}}
@@ -8,21 +8,19 @@
     {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
   </div>
     <div>
-      <label for="title">Swap Title</label>
-      <input type="text" id="post-title" name="title" />
+      <input type="text" id="post-title" name="title" placeholder="title" />
     </div>
     <div>
-      <label for="post_url">Swap description</label>
-      <input id="post-url" name="post_url"/>
+      <input id="post-url" name="post_url" placeholder="description"/>
     </div>
   
 
-      <button type="submit" class="btn"> Swap it! </button>
+      <button id="swapIt" type="submit" class="btn"> Swap it! </button>
 </form>
 </section>
 
 {{#if posts.length}}
-<section>
+<section id="yourPost">
   <h2>Your Posts</h2>
   <ol>
     {{#each posts as |post|}}
