@@ -128,11 +128,11 @@ router.post("/", withAuth, upload.single("uploaded_file"), (req, res) => {
   if (req.body.post_url.length < 5 || !req.file) {
     if (req.body.post_url.length < 5) {
       res.send(
-        "your description must be more than 5 characters!, please go back and give a longer description"
+        "Your description must be more than 5 characters, please go back and give a longer description"
       );
     } else {
       res.send(
-        "you did noy include a photo, please go back and upload a photo"
+        "You did not include a photo, please go back and upload a photo"
       );
     }
   } else {

@@ -57,14 +57,13 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: { 
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     post_url: {
       type: DataTypes.STRING,
       allowNull: true,
-      validate: { len: [5] },
     },
     file_name: {
       type: DataTypes.STRING,
