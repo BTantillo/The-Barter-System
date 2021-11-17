@@ -18,6 +18,11 @@
 
 </article>
 
+  <div>
+    <p>{{post.description}}</p>
+  </div>
+      {{post.vote_count}} {{format_plural "point" vote_count}} by {{post.user.username}} on {{format_date post.created_at}}
+</article>
 
 {{#if loggedIn}}
 <form class="comment-form">
