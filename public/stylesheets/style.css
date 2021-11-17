@@ -41,6 +41,11 @@ button {
   float: left;
 }
 
+img {
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+
 /* html {
   height: 100%;
   padding: 0;
