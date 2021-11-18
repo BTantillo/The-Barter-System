@@ -4,7 +4,7 @@
     Edit Post
   </h2>
   <form action="#" class="edit-post-form">
-    <div>
+    <div id="edit-post-box">
       <input name="post-title" type="text" value="{{post.title}}" />
       <textarea name="post-description" value="{{post.description}}" ></textarea>
       <span>({{format_url post.post_url}})</span>
@@ -20,13 +20,13 @@
     {{!-- <div class="form-group">
         <input type="file" class="form-control-file" name="uploaded_file"> --}}
       {{!-- <input type="submit" value="Upload!" class="btn btn-default"> --}}
-    </div>
+    <div id="edit-btns">
     <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button type="button" class="delete-post-btn">Delete post</button> </div>
   </form>
 </article>
 
-<form class="comment-form">
+<form class="comment-form" id="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
@@ -36,7 +36,11 @@
   </div>
 </form>
 
+<div id="edit-com">
 {{> comments post.comments}}
+</div>
+
+
 
 {{!-- RELINK --}}
 <script src="../public/javascript/edit-post.js"></script>
@@ -44,6 +48,4 @@
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/upvote.js"></script>
-
-
 
