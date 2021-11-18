@@ -4,7 +4,7 @@
 ## Description:
 
 Our group project is Swapsies! And no, it's not what you may think.....
-Swapsies is a "Barter System" where members will log-in and offer trades on goods or services with their local community. The site will allow users to post items or services they can barter with and can also perform searches for desired items or services. 
+Swapsies is a "Barter System" where members will log-in and offer trades on goods or services with their local community. The site will allow users to post items or services they can barter with as well as freebies offered, you can even upload pics!
 
 Are you tired of the clutter in your closet or garage? Ready to trade your paintball gear for a surfboard? Do you want to trade housecleaning or babysitting for an oil change or yard maintenance? Whatever goods or services you need or can offer can now easily be found in your area! With Swapsies, The Barter System, we are bringing back an old way of life, where money is not involved, but your needs are still fulfilled. This is a community where you can find things you need, or even things you don't!
 
