@@ -3,8 +3,9 @@
     <a href="/post/{{id}}">{{title}}</a>
   </div>
   <div class="meta">
-    {{vote_count}} {{format_plural "like" vote_count}} by {{user.username}} on {{format_date created_at}}
+    {{vote_count}} {{format_plural "like" vote_count}} Original poster: {{user.username}} on {{format_date created_at}}
     |
+    <img style="width: 300px; height: auto;" src="/upload/{{file_name}}">
     <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
   </div>
   {{!-- <img  src="/upload/{{file_name}}"> --}}

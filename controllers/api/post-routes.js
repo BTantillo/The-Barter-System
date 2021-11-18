@@ -4,7 +4,8 @@ const { Post, User, Comment, Vote } = require("../../models");
 const withAuth = require("../../utils/auth");
 const multer = require("multer");
 const path = require("path");
-
+const { VISITOR_KEYS } = require("@babel/types");
+const { response } = require("express");
 
 // Sets the storage constant to upload files into the upload folder.
 // Files are being stored through express not into the db.
@@ -21,7 +22,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 //Multer setup ENDS
-
 
 // get all users
 router.get("/", (req, res) => {
@@ -125,20 +125,36 @@ router.get("/:id", (req, res) => {
 router.post("/", withAuth, upload.single("uploaded_file"), (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   console.log("original Post route");
-  Post.create({
-    title: req.body.title,
-    post_url: req.body.post_url,
-    file_name: req.file.filename,
-    user_id: req.session.user_id,
-    description: req.body.post_url
-  })
-    .then((dbPostData) => res.redirect("/dashboard"))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-  console.log(req.file, req.body.title, req.body.post_url, req.session.user_id);
-  // console.log("#2", dbPostData);
+  if (req.body.post_url.length < 5 || !req.file) {
+    if (req.body.post_url.length < 5) {
+      res.send(
+        "your description must be more than 5 characters!, please go back and give a longer description"
+      );
+    } else {
+      res.send(
+        "you did noy include a photo, please go back and upload a photo"
+      );
+    }
+  } else {
+    Post.create({
+      title: req.body.title,
+      post_url: req.body.post_url,
+      file_name: req.file.filename,
+      user_id: req.session.user_id,
+      description: req.body.post_url,
+    })
+      .then((dbPostData) => res.redirect("/dashboard"))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+    console.log(
+      req.file,
+      req.body.title,
+      req.body.post_url,
+      req.session.user_id
+    );
+  }
 });
 
 router.put("/upvote", withAuth, (req, res) => {
@@ -155,9 +171,12 @@ router.put("/upvote", withAuth, (req, res) => {
 });
 
 router.put("/:id", withAuth, (req, res) => {
+  console.log("HERE I AM !!!!!!!!!!!!!");
   Post.update(
     {
       title: req.body.title,
+      post_url: req.body.description,
+      description: req.body.description,
     },
     {
       where: {
@@ -179,23 +198,34 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 router.delete("/:id", withAuth, (req, res) => {
-  console.log("id", req.params.id);
-  Post.destroy({
+  console.log("trying to delete post with id", req.params.id);
+  Vote.destroy({
     where: {
-      id: req.params.id,
+      post_id: req.params.id,
     },
-  })
-    .then((dbPostData) => {
-      if (!dbPostData) {
-        res.status(404).json({ message: "No post found with this id" });
-        return;
-      }
-      res.json(dbPostData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
+  }).then(() => {
+    Comment.destroy({
+      where: {
+        post_id: req.params.id,
+      },
+    }).then(() => {
+      Post.destroy({
+        where: {
+          id: req.params.id,
+        },
+      })
+        .then((dbPostData) => {
+          if (!dbPostData) {
+            res.status(404).json({ message: "No post found with this id" });
+            return;
+          }
+          res.json(dbPostData);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+        });
     });
+  });
 });
-
 module.exports = router;

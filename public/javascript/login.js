@@ -1,3 +1,5 @@
+console.log("Loading login.js file ")
+
 async function signupFormHandler(event) {
   event.preventDefault();
 
@@ -5,6 +7,7 @@ async function signupFormHandler(event) {
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
 
+  // To signup
   if (username && email && password) {
     const response = await fetch("/api/users", {
       method: "post",
@@ -17,7 +20,7 @@ async function signupFormHandler(event) {
       document.location.replace("/dashboard");
       // console.log(response);
     } else {
-      alert(response.statusText);
+      alert("Please try again or login", response.statusText);
     }
   }
 }
@@ -28,6 +31,7 @@ async function loginFormHandler(event) {
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
+  // To login
   if (email && password) {
     const response = await fetch("/api/users/login", {
       method: "post",
@@ -41,7 +45,7 @@ async function loginFormHandler(event) {
     if (response.ok) {
       document.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+      alert("Please check email or password and try again", response.statusText);
     }
   }
 }
@@ -53,3 +57,4 @@ document
 document
   .querySelector(".signup-form")
   .addEventListener("submit", signupFormHandler);
+
