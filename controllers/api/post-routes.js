@@ -171,12 +171,18 @@ router.put("/upvote", withAuth, (req, res) => {
 });
 
 router.put("/:id", withAuth, (req, res) => {
+<<<<<<< HEAD
   console.log("HERE I AM !!!!!!!!!!!!!");
   Post.update(
     {
       title: req.body.title,
       post_url: req.body.description,
       description: req.body.description,
+=======
+  Post.update(
+    {
+      title: req.body.title,
+>>>>>>> parent of aaec140 (edit save button functional, images added to homepage and dashboard)
     },
     {
       where: {
