@@ -122,13 +122,13 @@ h3 {
 
 footer {
   border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  padding: 1%;
-  font-size: 110%;
-  position:relative;
+  position: fixed;
+  left: 0;
   bottom: 0;
+  width: 100%;
+  color: white;
 } 
+
 
 header {
   border-bottom: 1px solid #ccc;
@@ -136,6 +136,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1%;
+  width: 100%;
 }
 
 .form {
