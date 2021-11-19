@@ -4,8 +4,8 @@ const { Post, User, Comment, Vote } = require("../../models");
 const withAuth = require("../../utils/auth");
 const multer = require("multer");
 const path = require("path");
-const { VISITOR_KEYS } = require("@babel/types");
-const { response } = require("express");
+// const { VISITOR_KEYS } = require("@babel/types");
+// const { response } = require("express");
 
 // Sets the storage constant to upload files into the upload folder.
 // Files are being stored through express not into the db.
